@@ -1,0 +1,78 @@
+*{
+  font-family: 'Mina', sans-serif;
+}
+
+.cardsTitleText{
+  font-size: 2rem;
+}
+
+.card{
+  width: 18rem;
+  height: 24rem;
+  overflow-y: hidden;
+}
+
+.cardImg{
+  position: relative;
+  bottom: 10%;
+}
+
+.cardbodySize{
+  height: 5.5rem;
+}
+
+.cardText{
+  font-size: .75rem ;
+}
+
+.stars{
+  z-index: 1;
+  bottom: 20%;
+}
+
+@media screen and (min-width: 1240px){
+  .cardsTitle{
+    width: 1216px;
+    margin: 0 auto;
+  }
+
+  .stars,
+  .cardFooter{
+    bottom: 26%;
+    transition-delay: .3s;
+    transition-duration: .3s;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .cardbodySize{
+    height: 4rem;
+    transition-delay: .0s;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+  }
+
+  .cardImg{
+    bottom: 0;
+    transition-delay: .0s;
+    transition-duration: .3s;
+  }
+
+  .card:hover > .cardImg{
+    bottom: 10%;
+  }
+  
+  .card:hover > .stars{
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .card:hover > .cardbodySize{
+    height: 7rem;
+  }
+
+  .card:hover > .card-body > .cardFooter{
+    visibility: visible;
+    opacity: 1;
+  }
+}
