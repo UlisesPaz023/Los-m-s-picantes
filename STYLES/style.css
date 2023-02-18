@@ -2,6 +2,15 @@
   font-family: 'Mina', sans-serif;
 }
 
+.header{
+  display: unset;
+}
+
+.sectionNav{
+  position: sticky;
+  top: 0;
+}
+
 .cardsTitleText{
   font-size: 2rem;
 }
