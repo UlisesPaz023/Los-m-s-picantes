@@ -4,9 +4,97 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Página administrativa - Los Más Picantes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mina&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../STYLES/style.css">
 </head>
 <body>
-  
+  <header class="header">
+    <nav class="sectionNav z-2 navbar navbar-expand-lg bg-dark navbar-dark top-0">
+      <section class="container-fluid justify-content-between justify-content-md-center w-100 flex-lg-column">
+          <div class="mb-2">
+            <img src="../IMG/Logo - Editado (2).png" alt="Logo" class="mx-3">
+            <a class="navbar-brand" href="#">Los Más Picantes</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active me-5" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-5" href="#">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-5" href="#">Acerca de nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 20">
+                  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                </svg>Login</a>
+              </li>
+            </ul>
+          </div>
+      </section>
+    </nav>
+  </header>
+  <main class="position-relative">
+    <div class="modal" tabindex="-1" id="newGameModalButton">
+      <div class="modal-dialog modal-fullscreen-md-down">
+        <form class="newGameModal modal-content rounded-0" name="formGame">
+          <div class="modal-header">
+            <h5 class="modal-title">Detalles del nuevo juego</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <input class="w-100" type="text" name="name" placeholder="Nombre">
+            </div>
+            <div class="mb-3">
+              <input class="w-100" type="text" name="category" placeholder="Categoría">
+            </div>
+            <div class="mb-3">
+              <input class="w-100" type="text" name="description" placeholder="Descripción">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary rounded-0" id="gameAddButton">Añadir</button>
+            <button type="button" class="btn btn-secondary rounded-0" data-bs-dismiss="modal">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="m-4 position-relative d-flex justify-content-center align-items-center">
+      <h3 class="text-center">Administrar productos</h3>
+      <button class="btn btn-primary position-absolute end-0" type="button" value="submit" data-bs-toggle="modal" data-bs-target="#newGameModalButton">Nuevo +</button>
+    </div>
+    <table class="table table-striped-columns table-bordered d-block d-md-table text-nowrap overflow-x-auto">
+      <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Categoría</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Publicado</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody id="tableSection"></tbody>
+    </table>
+  </main>
+  <footer>
+    <div class="text-center p-4 bg-white mt-5">
+      © 2023 Copyright  
+      <a class="fw-bold text-decoration-none text-muted" href="#"> <img src="./IMG/Logo - Editado (2).png" alt="$" width="25px"> LOS MAS PICANTES</a>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script type="module" src="../JS/admin.js"></script>
 </body>
 </html>

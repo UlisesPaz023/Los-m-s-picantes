@@ -2,6 +2,20 @@
   font-family: 'Mina', sans-serif;
 }
 
+.form-control::placeholder{
+  color: gray;
+}
+
+.formItem{
+  border-bottom: .2rem #d9534f solid !important;
+}
+
+.formBody{
+  width: 40rem;
+  height: 43rem;
+  margin: 2rem auto;
+}
+
 .header{
   display: unset;
 }
@@ -16,6 +30,7 @@
 }
 
 .card{
+  display: block;
   width: 18rem;
   height: 24rem;
   overflow-y: hidden;
@@ -37,6 +52,11 @@
 .stars{
   z-index: 1;
   bottom: 20%;
+}
+
+.newGameModal{
+  margin: 0 auto;
+  width: fit-content;
 }
 
 @media screen and (min-width: 1240px){
