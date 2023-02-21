@@ -1,7 +1,7 @@
 import myJson from '../db.json' assert {type: 'json'};
 
 myJson.games.map((x)=>{
-  tableSection.innerHTML += `<tr>
+  tableSection.innerHTML += `<tr class="editBody">
   <th scope="row">${x.id}</th>
   <td>${x.name}</td>
   <td>${x.category}</td>
@@ -11,15 +11,48 @@ myJson.games.map((x)=>{
     <button class="border m-1 p-1 text-decoration-none deleteButton">
       <i class="bi bi-trash"></i>
     </button>
-    <button class="border m-1 p-1 text-decoration-none editButton data-bs-toggle="modal" data-bs-target="#editModalButton">
+    <button class="border m-1 p-1 text-decoration-none editModalButton" data-bs-toggle="modal" data-bs-target="#editModalButton">
       <i class="bi bi-pencil-square"></i>
     </button>
-    <button class="border m-1 p-1 text-decoration-none starButton">
+    <div class="border m-1 p-1 text-decoration-none starButton">
       <i class="starIcon bi bi-star"></i>
-    </button>
+      <input class="star" type="radio" name="stars" id="radio${x.id}">
+    </div>
   </td>
   </tr>`
 });
+
+let star = document.querySelectorAll('.star')
+star.forEach((eachStar,i)=>{
+  star[i].addEventListener('click', ()=>{
+    let radioID = document.getElementById(`radio${i}`)
+    if(radioID.checked){
+      fetch(`http://localhost:3000/games/${i}`,{
+        method: 'PATCH',
+        body: JSON.stringify({
+          outstanding: true
+        }),
+        headers: {
+          'Content-type':'application/json; charset=UTF-8',
+        }
+      })
+      .then(resp => resp.json())
+      .then(resp => console.log(resp))
+      .catch((error) => console.log(error))
+      console.log(myJson.games[i].outstanding)
+    } else {
+      fetch(`http://localhost:3000/games/${i}`,{
+        method: 'PATCH',
+        body: JSON.stringify({
+          outstanding: false
+        }),
+        headers: {
+          'Content-type':'application/json; charset=UTF-8',
+        }
+      })
+    }
+  })
+})
 
 const deleteButton = document.querySelectorAll('.deleteButton')
 
@@ -29,7 +62,7 @@ deleteButton.forEach((eachDeleteBtn, i) => {
 
     if(confirm) {      
       fetch(`http://localhost:3000/games/${i}`,{
-        method: 'DELETE',
+        method: 'DELETE'
       })
       .then(resp => resp.json())
       .then(resp => console.log(resp))
@@ -38,43 +71,6 @@ deleteButton.forEach((eachDeleteBtn, i) => {
   })
 })
 
-let starButton = document.querySelectorAll('.starButton')
-let starIcon = document.querySelectorAll('.starIcon')
-
-let starArray = myJson.games.map((x)=>x.outstanding=false)
-fetch('http://localhost:3000/games',{
-  method: 'PUT',
-  body: JSON.stringify({
-    outstanding: false
-  }),
-  headers: {
-    'Content-type':'application/json; charset=UTF-8',
-  }
-})
-.then(resp => resp.json())
-.then(resp => console.log(resp))
-.catch((error) => console.log(error))
-
-
-console.log(starArray)
-
-//   starButton.forEach((eachStar, i)=> {
-//     if(myJson.games[i].outstanding && starIcon[i].classList.contains( 'bi-star')){
-//       starIcon[i].classList.remove('bi-star')
-//       starIcon[i].classList.add('bi-star-fill')
-//     } else{
-//       starIcon[i].classList.remove('bi-star-fill')
-//       starIcon[i].classList.add('bi-star')
-//     }
-  
-//     starButton[i].addEventListener('click',()=>{
-//       starButtonToggle()
-//   })
-
-//   let starButtonToggle = () => {
-//     if('hola'){}
-//   }
-// })
 
 const newGameModalButton = document.getElementById('newGameModalButton')
 const gameAddButton = document.getElementById('gameAddButton')
@@ -127,5 +123,5 @@ newGameModalButton.addEventListener('shown.bs.modal', ()=>{
       .then((resp) => console.log(resp))
       .catch((error) => console.log(error))
     }
-    })
+  })
 })
