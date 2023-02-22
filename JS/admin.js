@@ -1,6 +1,4 @@
-import myJson from '../db.json' assert {type: 'json'};
-
-myJson.games.map((x)=>{
+games.map((x)=>{
   tableSection.innerHTML += `<tr class="editBody">
   <th scope="row">${x.id}</th>
   <td>${x.name}</td>
@@ -27,29 +25,10 @@ star.forEach((eachStar,i)=>{
   star[i].addEventListener('click', ()=>{
     let radioID = document.getElementById(`radio${i}`)
     if(radioID.checked){
-      fetch(`http://localhost:3000/games/${i}`,{
-        method: 'PATCH',
-        body: JSON.stringify({
-          outstanding: true
-        }),
-        headers: {
-          'Content-type':'application/json; charset=UTF-8',
-        }
-      })
-      .then(resp => resp.json())
-      .then(resp => console.log(resp))
-      .catch((error) => console.log(error))
-      console.log(myJson.games[i].outstanding)
-    } else {
-      fetch(`http://localhost:3000/games/${i}`,{
-        method: 'PATCH',
-        body: JSON.stringify({
-          outstanding: false
-        }),
-        headers: {
-          'Content-type':'application/json; charset=UTF-8',
-        }
-      })
+      console.log(hola)
+    }else {
+      
+      console.log(chau)
     }
   })
 })
@@ -61,12 +40,7 @@ deleteButton.forEach((eachDeleteBtn, i) => {
     let confirm = window.confirm('¿Seguro que deseas borrar el juego?.')
 
     if(confirm) {      
-      fetch(`http://localhost:3000/games/${i}`,{
-        method: 'DELETE'
-      })
-      .then(resp => resp.json())
-      .then(resp => console.log(resp))
-      .catch((error) => console.log(error))
+      alert('Hola')
     }
   })
 })
@@ -95,7 +69,7 @@ newGameModalButton.addEventListener('shown.bs.modal', ()=>{
       }
     })
     
-    const categoryValidation = myJson.games.filter((x)=>{ 
+    const categoryValidation = games.filter((x)=>{ 
       return x.category==game.category;
     })
     
@@ -104,24 +78,7 @@ newGameModalButton.addEventListener('shown.bs.modal', ()=>{
     }else if(categoryValidation.length>3){
       alert('No se puede agregar más de cuatro juegos de la misma categoría.')
     }else{
-      fetch("http://localhost:3000/games",{
-        method : 'POST',
-        body: JSON.stringify({
-          category: game.category,
-          name: game.name,
-          description: game.description,
-          price: 2.45,
-          img: '#',
-          published: "12/12/12",
-          outstanding: false
-        }),
-        headers: {
-          'Content-type':'application/json; charset=UTF-8',
-        }
-      })
-      .then((resp) => resp.json())
-      .then((resp) => console.log(resp))
-      .catch((error) => console.log(error))
+      alert('Eliminación existosa')
     }
   })
 })

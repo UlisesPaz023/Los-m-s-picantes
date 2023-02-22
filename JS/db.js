@@ -1,10 +1,51 @@
 let user = [
   {
     id:1,
+    name:'Nicolás',
+    apellido:'Chaves',
+    email:'nicochaves@gmail.com',
+    contraseña: 'nico123',
+    admin: true
+  },
+  {
+    id:2,
     name:'Ulises',
     apellido:'Paz',
-    email:'lioipaz2010@gmail.com',
-    contraseña: 'uli123'
+    email:'ulisespaz@gmail.com',
+    contraseña: 'uli123',
+    admin: true
+  },
+  {
+    id:3,
+    name:'Santiago',
+    apellido:'Marat',
+    email:'santimarat@gmail.com',
+    contraseña: 'santi123',
+    admin: true
+  },
+  {
+    id:4,
+    name:'Julián',
+    apellido:'Llanca',
+    email:'julianllanca@gmail.com',
+    contraseña: 'juli123',
+    admin: true
+  },
+  {
+    id:5,
+    name:'Ignacio',
+    apellido:'Medina',
+    email:'ingaciomedina@gmail.com',
+    contraseña: 'nacho123',
+    admin: true
+  },
+  {
+    id:6,
+    name:'Javier',
+    apellido:'Mamaní',
+    email:'javiermamani@gmail.com',
+    contraseña: 'javi123',
+    admin: true
   }
 ]
 
@@ -19,6 +60,7 @@ let games = [
     category: 'ESTRATEGIA',
     name: 'Desesperados III',
     description: 'Money for the vultures',
+    description1: 'Comienza una nueva saga para una de las franquicias de videojuegos más aclamadas de la historia. Tras escapar por muy poco de un ataque a su pueblo, JD Fenix y sus amigos, Kait y Del, deben rescatar a sus seres queridos y descubrir el origen de su monstruoso enemigo.',
     price: 2.45,
     img:'./img/card1.jpg',
     published: '12/12/12',

@@ -2,17 +2,28 @@ const usuario = JSON.parse(localStorage.getItem('users'));
 const btnInicio = document.getElementById("btnI");
 const btnCerrar = document.getElementById("btnC");
 const btnRegistro = document.getElementById("btnR");
+const btnAdmin = document.getElementById("btnA");
 
 if (localStorage.getItem('users')){
   btnCerrar.hidden=true;
+  btnCerrar.admin=true;
 }
+
 if (localStorage.getItem('userlog')){
   btnInicio.hidden=true;
   btnRegistro.hidden=true;
   btnCerrar.hidden=false;
+  let userLog = JSON.parse(localStorage.getItem('userlog'));
+  if(userLog.admin==true){
+    btnAdmin.hidden=false;
+  }else{
+    btnAdmin.hidden=true;
+  }
 }
+
 if(!localStorage.getItem('userlog')){
   btnCerrar.hidden=true;
+  btnAdmin.hidden=true;
 }
 
 const registro = () =>{
@@ -21,6 +32,7 @@ const registro = () =>{
       name: document.getElementById('nom').value,
       email: document.getElementById('correo1').value,
       contraseña: document.getElementById('contra1').value,
+      admin:false
   }
   let banderaVacia;
   let banderaEmail;
@@ -97,8 +109,8 @@ const inicio = () =>{
   usuario.map((user) =>{
     if(email===user.email.toLowerCase() && contra===user.contraseña){
       bandera=true;
-    }
       usuarioLog = user;
+    }
     })
     
     if(bandera){
