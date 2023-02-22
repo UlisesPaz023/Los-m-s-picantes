@@ -20,7 +20,7 @@ const result = games.find((x)=>{
     <img src="${x.img}" class="card-img-top w-100 p-3" alt="...">
     </div>
     <div class="card-body col-6">
-      <h1 class="card-title text-white m-4 p-3">${x.name}</h1>
+      <h1 class="card-title text-white m-2 p-1">${x.name}</h1>
       <p class="card-text text-white m-2 p-1">Categoría: ${x.category}</p>
       <p class="card-text text-white m-2 p-1">Nombre: ${x.description}</p>
       <p class="card-text text-white m-2 p-1">${x.description1}</p>
