@@ -6,7 +6,6 @@ const btnAdmin = document.getElementById("btnA");
 
 if (localStorage.getItem('users')){
   btnCerrar.hidden=true;
-  btnCerrar.admin=true;
 }
 
 if (localStorage.getItem('userlog')){

@@ -25,10 +25,9 @@ star.forEach((eachStar,i)=>{
   star[i].addEventListener('click', ()=>{
     let radioID = document.getElementById(`radio${i}`)
     if(radioID.checked){
-      console.log(hola)
+      games[i].outstanding = true;
     }else {
-      
-      console.log(chau)
+      games[i].outstanding = false;
     }
   })
 })
