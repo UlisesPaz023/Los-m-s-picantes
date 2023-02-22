@@ -1,6 +1,5 @@
 let cardDinamic = document.getElementById('cardDinamic')
-
-import myJson from '../db.json' assert {type: 'json'};
+let mainCard = document.getElementById('mainCard')
 
 const categorySort = ( x, y ) => {
   if ( x.category < y.category ){
@@ -11,9 +10,24 @@ const categorySort = ( x, y ) => {
   }
   return 0;
 }
-myJson.games.sort(categorySort);
+games.sort(categorySort);
 
-myJson.games.map((x)=>{
+const result = games.find((x)=>{
+  if(x.outstanding === true){
+    mainCard.innerHTML = 
+    `
+    <div class="card" style="width: 18rem;">
+    <img src="${x.img}" class="card-img-top" alt="...">
+    <div class="card-body">
+    <h5 class="card-title">${x.name}</h5>
+    <p class="card-text">${x.description}</p>
+    </div>
+    </div>
+    `
+  }
+})
+
+games.map((x)=>{
   if(x.id % 4 === 0){
     cardDinamic.innerHTML += 
     `

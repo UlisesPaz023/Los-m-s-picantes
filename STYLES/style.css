@@ -25,6 +25,11 @@
   top: 0;
 }
 
+.mainCard{
+  width: 10rem;
+  height: 10rem;
+}
+
 .cardsTitleText{
   font-size: 2rem;
 }
