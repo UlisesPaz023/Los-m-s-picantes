@@ -15,7 +15,6 @@ if(!localStorage.getItem('userlog')){
   btnCerrar.hidden=true;
 }
 
-const user = [];
 const registro = () =>{
   let usuarios = {
       apellido: document.getElementById('ape').value,
