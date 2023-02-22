@@ -15,14 +15,18 @@ games.sort(categorySort);
 const result = games.find((x)=>{
   if(x.outstanding === true){
     mainCard.innerHTML = 
-    `
-    <div class="card" style="width: 18rem;">
-    <img src="${x.img}" class="card-img-top" alt="...">
-    <div class="card-body">
-    <h5 class="card-title">${x.name}</h5>
-    <p class="card-text">${x.description}</p>
+    `<div class="row d-flex pt-5">
+    <div class="col-12 col-md-6">
+    <img src="${x.img}" class="card-img-top w-100 p-3" alt="...">
     </div>
+    <div class="card-body col-6">
+      <h1 class="card-title text-white m-4 p-3">${x.name}</h1>
+      <p class="card-text text-white m-2 p-1">Categoría: ${x.category}</p>
+      <p class="card-text text-white m-2 p-1">Nombre: ${x.description}</p>
+      <p class="card-text text-white m-2 p-1">${x.description1}</p>
+      <a href="#" class="btn btn-secondary m-3 p-1">Ver Más...</a>
     </div>
+  </div>
     `
   }
 })
