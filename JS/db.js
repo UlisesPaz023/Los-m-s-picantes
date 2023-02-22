@@ -60,11 +60,10 @@ let games = [
     category: 'ESTRATEGIA',
     name: 'Desesperados III',
     description: 'Money for the vultures',
-    description1: 'Comienza una nueva saga para una de las franquicias de videojuegos más aclamadas de la historia. Tras escapar por muy poco de un ataque a su pueblo, JD Fenix y sus amigos, Kait y Del, deben rescatar a sus seres queridos y descubrir el origen de su monstruoso enemigo.',
     price: 2.45,
     img:'./img/card1.jpg',
     published: '12/12/12',
-    outstanding: true 
+    outstanding: false 
   },
   {
     id : 1,
@@ -181,10 +180,11 @@ let games = [
     category: 'ACCIÓN',
     name: 'Gears Of War IV',
     description: 'Gears Of War IV',
+    description1: 'Comienza una nueva saga para una de las franquicias de videojuegos más aclamadas de la historia. Tras escapar por muy poco de un ataque a su pueblo, JD Fenix y sus amigos, Kait y Del, deben rescatar a sus seres queridos y descubrir el origen de su monstruoso enemigo.',
     price: 2.45,
     img:'./img/card13.webp',
     published: '12/12/12',
-    outstanding: false 
+    outstanding: true 
   },
   {
     id : 13,

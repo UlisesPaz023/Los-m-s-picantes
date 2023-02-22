@@ -24,7 +24,7 @@ const result = games.find((x)=>{
       <p class="card-text text-white m-2 p-1">Categoría: ${x.category}</p>
       <p class="card-text text-white m-2 p-1">Nombre: ${x.description}</p>
       <p class="card-text text-white m-2 p-1">${x.description1}</p>
-      <a href="#" class="btn btn-secondary m-3 p-1">Ver Más...</a>
+      <a href="./PAGES/error404_index.html" class="btn btn-secondary m-3 p-1">Ver Más...</a>
     </div>
   </div>
     `
@@ -42,7 +42,7 @@ games.map((x)=>{
   }
   cardDinamic.innerHTML +=
   `
-  <a href="#" class="card m-2 card p-0 border-1 rounded-0">
+  <a href="./PAGES/error404_index.html" class="card m-2 card p-0 border-1 rounded-0">
   <figure class="stars position-absolute ps-2">
   <i class="bi bi-star-fill text-warning"></i>
   <i class="bi bi-star-fill text-warning"></i>
